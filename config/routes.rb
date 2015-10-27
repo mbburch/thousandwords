@@ -14,7 +14,7 @@ root 'welcome#index'
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 get '/auth/twitter', as: :login
 get '/auth/twitter/callback', to: 'sessions#create'
-get '/logout', to: 'sessions#destroy', as: :logout
+delete '/logout', to: 'sessions#destroy', as: :logout
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
