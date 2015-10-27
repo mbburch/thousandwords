@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :instagram, ENV['CLIENT_ID'], ENV['CLIENT_SECRET']
+  provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
 end
 
