@@ -1,0 +1,13 @@
+<nav>
+  <div class="nav-wrapper teal darken-2" id="nav">
+    <a href="/" class="brand-logo">TinyPosts</a>
+    <ul class="right hide-on-med-and-down">
+    <% if current_user %>
+      <li><%= link_to "Hello, #{current_user.name.downcase}", root_path %></li>
+      <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Log In", login_path %></li>
+    <% end %>
+    </ul>
+  </div>
+</nav>

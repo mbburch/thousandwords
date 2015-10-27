@@ -7,13 +7,17 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     stub_omniauth
   end
 
-  test "logging in" do
+  test "logging out" do
     visit "/"
     assert_equal 200, page.status_code
     click_link "Log In"
     assert_equal "/", current_path
     assert page.has_content?("mb")
     assert page.has_link?("Log Out")
+
+    click_link "Log Out"
+    assert page.has_content?("Log In")
+    refute page.has_content?("mb")
   end
 
   def stub_omniauth
