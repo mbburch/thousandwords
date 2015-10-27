@@ -10,8 +10,10 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
   test "logging in" do
     visit "/"
     assert_equal 200, page.status_code
-    click_link "Log In"
-    assert_equal "/", current_path
+    within("body") do
+      click_link "Log In"
+    end
+    assert_equal "/dashboard", current_path
     assert page.has_content?("mb")
     assert page.has_link?("Log Out")
   end

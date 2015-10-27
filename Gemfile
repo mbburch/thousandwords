@@ -13,11 +13,11 @@ gem "omniauth-twitter"
 gem "twitter"
 gem "figaro"
 gem "bootstrap-sass"
-
 gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
   gem "capybara"
   gem "launchy"
   gem "simplecov"
