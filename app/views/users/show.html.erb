@@ -24,7 +24,8 @@
        <% current_user.home_timeline.each do |status| %>
          <div class="card-panel grey lighten-5 z-depth-1">
            <div class="row valign-wrapper">
-             <li class="tweet"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
+             <span class="glyphicon glyphicon-star-empty col s2"><%= link_to "Favorite", "#" %></span>
+             <li class="tweet col s8"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
            </div>
          </div>
        <% end %>
