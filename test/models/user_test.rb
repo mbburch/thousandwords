@@ -14,3 +14,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
 end
+
+#set up with real info from twitter. In first assert, call method that accesses API. Will get error
+#message with instructions of what to do and should create the cassettes folder.

@@ -21,6 +21,13 @@ group :development, :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "rspec-rails"
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

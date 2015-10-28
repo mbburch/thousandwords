@@ -9,7 +9,7 @@
       screen_name:        auth_info.extra.raw_info.screen_name,
       oauth_token:        auth_info.credentials.token,
       oauth_token_secret: auth_info.credentials.secret
-    )
+      )
 
     user
   end
@@ -23,11 +23,27 @@
     end
   end
 
-  def twitter_timeline
-    twitter_client.home_timeline
+  def home_timeline
+    @home_timeline ||= twitter_client.home_timeline
   end
 
-  def twitter_followers
-    twitter_client.followers_count
+  def user
+    @user ||= twitter_client.user
+  end
+
+  def followers
+    user.followers_count
+  end
+
+  def friends
+    user.friends_count
+  end
+
+  def tweet_count
+    user.tweet_count
+  end
+
+  def profile_image
+    user.profile_image_url.to_s.sub("_normal.", ".")
   end
 end
