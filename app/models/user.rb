@@ -23,15 +23,23 @@
     end
   end
 
-  def twitter_timeline
+  def image
+    twitter_client.image
+  end
+
+  def timeline
     twitter_client.home_timeline
   end
 
-  def twitter_followers
-    twitter_client.followers_count
+  def followers
+    twitter_client.followers.count
   end
 
-  def twitter_friends
-    twitter_client.friends_count
+  def friends
+    twitter_client.friends.count
+  end
+
+  def tweet_count
+    twitter_client.tweet_count
   end
 end

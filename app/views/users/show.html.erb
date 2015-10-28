@@ -11,11 +11,10 @@
          </div>
          <div class="col s8">
            <span class="black-text">
-             Name: <h5><%= current_user.name %></h5>
-             Screen Name:<h5><%= current_user.screen_name %></h5>
-             <%= current_user.twitter_timeline.first.full_text %>
-             Followers: <%= current_user.twitter_followers.count %>
-             Friends: <%= current_user.twitter_friends.count %>
+             <h4><%= current_user.name %></h4>
+             <h5>@<%= current_user.screen_name %></h5>
+             <p>Followers: <%= current_user.followers %></p>
+             <p>Friends: <%= current_user.friends %></p>
            </span>
          </div>
        </div>
