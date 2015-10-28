@@ -30,4 +30,8 @@
   def twitter_followers
     twitter_client.followers_count
   end
+
+  def twitter_friends
+    twitter_client.friends_count
+  end
 end
