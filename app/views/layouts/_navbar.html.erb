@@ -1,17 +1,11 @@
 <nav>
   <div class="nav-wrapper teal darken-2" id="nav">
     <a href="/" class="brand-logo"><span class="glyphicon glyphicon-pencil"> TinyPosts</a>
-    <% if current_user %>
-    <ul class="left hide-on-med-and-down">
-      <li><%= link_to "New Tweet", "#" %></li>
-      <li><%= link_to "Timeline Feed", "#" %></li>
-    <% else %>
-    <% end %>
-    </ul>
 
     <ul class="right hide-on-med-and-down">
     <% if current_user %>
-      <li><%= link_to "Hello, #{current_user.name.downcase}", root_path %></li>
+      <li><%= link_to "#{current_user.name.downcase}\'s Profile", dashboard_path(current_user) %></li>
+      <li><%= link_to "New Tweet", "#" %></li>
       <li><%= link_to "Log Out", logout_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "Log In", login_path %></li>

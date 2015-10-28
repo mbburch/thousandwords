@@ -19,6 +19,7 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
   end
 
   def stub_omniauth
+
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
       provider: 'twitter',
