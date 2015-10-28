@@ -7,12 +7,14 @@
      <div class="card-panel grey lighten-5 z-depth-1">
        <div class="row valign-wrapper">
          <div class="col s2">
-           <img src="https://pbs.twimg.com/profile_images/378800000633687574/5941bfa1284255c7bf9429f58ee06261.jpeg" alt="" class="circle responsive-img">
+           <img src= "<%= "#{current_user.name}" %>" alt="" class="circle responsive-img">
          </div>
          <div class="col s8">
            <span class="black-text">
-             <h5>@dirtandgreens</h5>
-             Discover new things and see what your friends are up to. It's amazing how much you can fit into so few words.
+             Name: <h5><%= current_user.name %></h5>
+             Screen Name:<h5><%= current_user.screen_name %></h5>
+             <%= current_user.twitter_timeline.first.full_text %>
+             Followers: <%= current_user.twitter_followers %>
            </span>
          </div>
        </div>

@@ -1,4 +1,6 @@
  class User < ActiveRecord::Base
+   attr_reader :twitter_client
+
   def self.from_omniauth(auth_info)
     user = find_or_create_by(uid: auth_info[:uid])
 
@@ -23,5 +25,9 @@
 
   def twitter_timeline
     twitter_client.home_timeline
+  end
+
+  def twitter_followers
+    twitter_client.followers_count
   end
 end
