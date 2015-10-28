@@ -4,27 +4,27 @@
 </div>
 <div class="section white container">
   <div class="col s10 m8 offset-m2 l6 offset-l3">
-     <div class="card-panel grey lighten-5 z-depth-1">
+     <div class="card-panel grey lighten-5 z-depth-1" id="user-profile">
        <div class="row valign-wrapper">
-         <div class="col s2">
+         <div class="col s2" id="user-image">
            <%= image_tag current_user.profile_image, class: "circle responsive-img" %>
          </div>
          <div class="col s8">
            <div class="black-text">
-             <h4><%= current_user.name %></h4>
-             <h5>@<%= current_user.screen_name %></h5>
-             <p>Followers: <%= current_user.followers %></p>
-             <p>Friends: <%= current_user.friends %></p>
+             <h4 id="user-name"><%= current_user.name %></h4>
+             <h5 id="user-screen_name">@<%= current_user.screen_name %></h5>
+             <p id="user-followers">Followers: <%= current_user.followers %></p>
+             <p id="user-friends">Following: <%= current_user.friends %></p>
            </div>
          </div>
        </div>
      </div>
-     <div>
+     <div class="timeline">
        <ul>
        <% current_user.home_timeline.each do |status| %>
          <div class="card-panel grey lighten-5 z-depth-1">
            <div class="row valign-wrapper">
-             <li><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
+             <li class="tweet"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
            </div>
          </div>
        <% end %>

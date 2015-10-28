@@ -20,8 +20,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<CONSUMER_KEY>') { ENV['CONSUMER_KEY'] }
   config.filter_sensitive_data('<CONSUMER_SECRET>') { ENV['CONSUMER_SECRET'] }
-  config.filter_sensitive_data('<USER_TOKEN>') { ENV['credentials_token'] }
-  config.filter_sensitive_data('<USER_SECRET>') { ENV['credentials_secret'] }
+  config.filter_sensitive_data('<USER_TOKEN>') { ENV['USER_TOKEN'] }
+  config.filter_sensitive_data('<USER_SECRET>') { ENV['USER_SECRET'] }
 end
 
 
@@ -35,21 +35,21 @@ RSpec.configure do |config|
   config.backtrace_exclusion_patterns << %r{/gems/}
 
   config.before :each do
-  OmniAuth.config.mock_auth[:twitter] = nil
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-        provider: 'twitter',
-        uid: '1234',
-        extra: {
-          raw_info {
-            name: "MB",
-            screen_name: "embee"
+    OmniAuth.config.mock_auth[:twitter] = nil
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+          provider: 'twitter',
+          uid: ENV['uid'],
+          extra: {
+            raw_info: {
+              name: "MB",
+              screen_name: "dirtandgreens"
+            }
+          },
+          credentials: {
+            token: ENV['USER_TOKEN'],
+            secret: ENV['USER_SECRET']
           }
-        },
-        :credentials => {
-          :token => "token",
-          :secret => "secrettoken"
-        }
-      })
-end
+        })
+  end
 end
