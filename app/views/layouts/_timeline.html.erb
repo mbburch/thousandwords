@@ -13,8 +13,12 @@
               <li><span><%= status.favorite_count %></span></li>
             </ul>
             <ul>
-              <li><h5 class="retweet"><%= link_to glyph(:retweet), retweets_path(tweet_id: status.id), method: :post %></h5></li>
-              <li><span><%= status.retweet_count %></span></li>
+              <% if status.retweeted? %>
+                <li><h5 class="unfave"><span class="glyphicon glyphicon-check"></span></h5></li>
+              <% else %>
+                <li><h5 class="retweet"><%= link_to glyph(:retweet), retweets_path(tweet_id: status.id), method: :post %></h5></li>
+              <% end %>
+              <li><span><li><span><%= status.retweet_count %></span></li></span></li>
             </ul>
           </div>
           <div class="col s2">
