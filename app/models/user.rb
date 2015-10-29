@@ -21,5 +21,6 @@
   delegate :timeline,
            :follower_count,
            :friends_count,
-           :favorite, to: :twitter_client
+           :favorite,
+           :tweet, to: :twitter_client
 end
