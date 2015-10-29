@@ -1,28 +1,28 @@
 <div class="timeline">
   <ul>
-  <% @twitter_client.home_timeline.each do |status| %>
-    <div class="card-panel grey lighten-5 z-depth-1">
-      <div class="row valign-wrapper">
-        <div class="col s2 center">
-          <ul>
-          <% if status.favorited? %>
-            <li><h5 class="unfave"><%= link_to glyph(:star), favorite_path(status.id), method: :delete %></h5></li>
-          <% else %>
-            <li><h5 class="fave"><%= link_to glyph(:star_empty), favorites_path(tweet_id: status.id), method: :post %></h5></li>
-          <% end %>
-          <li><span><%= status.favorite_count %></span></li>
-        </ul>
-        </div>
-        <div class="col s2">
-           <%= image_tag status.user.profile_image_url, class: "circle responsive-img" %>
-        </div>
-        <div class="col s6">
-           <ul>
-            <li class="tweet"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
-          </ul>
+    <% @twitter_client.home_timeline.each do |status| %>
+      <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper">
+          <div class="col s2 center">
+            <ul>
+              <% if status.favorited? %>
+                <li><h5 class="unfave"><%= link_to glyph(:star), favorite_path(status.id), method: :delete %></h5></li>
+              <% else %>
+                <li><h5 class="fave"><%= link_to glyph(:star_empty), favorites_path(tweet_id: status.id), method: :post %></h5></li>
+              <% end %>
+              <li><span><%= status.favorite_count %></span></li>
+            </ul>
+          </div>
+          <div class="col s2">
+             <%= image_tag status.user.profile_image_url, class: "circle responsive-img" %>
+          </div>
+          <div class="col s6">
+             <ul>
+              <li class="tweet"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   </ul>
 </div>

@@ -40,6 +40,5 @@ RSpec.describe "User views dashboard", type: :feature, vcr: true  do
     it "can view the timeline" do
       expect(page).to have_css('.tweet', count: 20)
     end
-
   end
 end

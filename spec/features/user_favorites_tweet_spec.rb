@@ -11,6 +11,7 @@ RSpec.describe "User favorites tweet", type: :feature, vcr: true  do
 
     it "can favorite a tweet" do
       expect(current_path).to eq(dashboard_path)
+
       page.first(".fave").click
 
       expect(current_path).to eq(dashboard_path)

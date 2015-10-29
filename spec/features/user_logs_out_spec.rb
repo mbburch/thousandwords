@@ -18,6 +18,7 @@ RSpec.describe "User can log out", type: :feature, vcr: true do
       end
 
       expect(current_path).to eq root_path
+
       within("body") do
         expect(page).to have_content("Log In")
       end
