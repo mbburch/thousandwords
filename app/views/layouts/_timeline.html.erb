@@ -3,13 +3,15 @@
   <% @twitter_client.home_timeline.each do |status| %>
     <div class="card-panel grey lighten-5 z-depth-1">
       <div class="row valign-wrapper">
-        <div class="col s2">
+        <div class="col s2 center">
+          <ul>
           <% if status.favorited? %>
-            <span class="unfave"><%= link_to glyph(:star), favorite_path(status.id), method: :delete %></span>
+            <li><h5 class="unfave"><%= link_to glyph(:star), favorite_path(status.id), method: :delete %></h5></li>
           <% else %>
-            <span class="fave"><%= link_to glyph(:star_empty), favorites_path(tweet_id: status.id), method: :post %></span>
+            <li><h5 class="fave"><%= link_to glyph(:star_empty), favorites_path(tweet_id: status.id), method: :post %></h5></li>
           <% end %>
-          <span><%= status.favorite_count %></span>
+          <li><span><%= status.favorite_count %></span></li>
+        </ul>
         </div>
         <div class="col s2">
            <%= image_tag status.user.profile_image_url, class: "circle responsive-img" %>
