@@ -4,7 +4,7 @@ RSpec.describe "User views dashboard", type: :feature, vcr: true  do
   context "as a logged in user" do
     before do
       visit root_path
-      within("header") do
+      within("main") do
         click_on "Log In"
       end
     end

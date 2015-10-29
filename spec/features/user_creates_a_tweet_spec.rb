@@ -10,7 +10,7 @@ RSpec.describe "User creates a tweet", type: :feature, vcr: true  do
     end
 
     it "can post a new tweet" do
-      within("header") do
+      within(".hide-on-med-and-down") do
         click_on "New Tweet"
       end
       expect(current_path).to eq(new_tweet_path)

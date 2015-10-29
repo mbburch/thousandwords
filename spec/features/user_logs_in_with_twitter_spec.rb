@@ -5,7 +5,7 @@ RSpec.describe "User can log in with twitter", type: :feature, vcr: true do
     it "logs in with twitter" do
       visit root_path
       expect(page.status_code).to eq 200
-      within("header") do
+      within("main") do
         click_link "Log In"
       end
       expect(current_path).to eq dashboard_path

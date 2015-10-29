@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper blue-grey darken-2" id="nav">
     <a href="/" class="brand-logo"><span class="glyphicon glyphicon-pencil"></span> TinyPosts</a>
-
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
     <% if current_user %>
       <li><%= link_to "#{current_user.name}\'s Profile", dashboard_path(current_user) %></li>
@@ -10,6 +10,15 @@
     <% else %>
       <li><%= link_to "Log In", login_path %></li>
     <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <% if current_user %>
+        <li><%= link_to "#{current_user.name}\'s Profile", dashboard_path(current_user) %></li>
+        <li><%= link_to "New Tweet", new_tweet_path %></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Log In", login_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

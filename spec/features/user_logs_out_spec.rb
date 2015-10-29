@@ -4,7 +4,7 @@ RSpec.describe "User can log out", type: :feature, vcr: true do
   context "as a logged in user" do
     before do
       visit root_path
-      within("header") do
+      within("main") do
         click_link "Log In"
       end
     end
@@ -13,7 +13,9 @@ RSpec.describe "User can log out", type: :feature, vcr: true do
       assert page.has_content?("mb")
       assert page.has_link?("Log Out")
 
-      click_link "Log Out"
+      within(".hide-on-med-and-down") do
+        click_link "Log Out"
+      end
 
       expect(current_path).to eq root_path
       within("body") do
