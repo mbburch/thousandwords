@@ -24,5 +24,6 @@
            :favorite,
            :destroy_favorite,
            :tweet,
-           :retweet, to: :twitter_client
+           :retweet,
+           :unfollow, to: :twitter_client
 end

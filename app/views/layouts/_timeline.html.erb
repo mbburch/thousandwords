@@ -18,11 +18,14 @@
             </ul>
           </div>
           <div class="col s2">
-             <%= image_tag status.user.profile_image_url, class: "circle responsive-img" %>
+            <ul>
+             <li><%= image_tag status.user.profile_image_url, class: "circle responsive-img" %></li>
+           </ul>
           </div>
           <div class="col s6">
              <ul>
               <li class="tweet"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
+              <li><h5 class="unfollow right bottom btn btn-xs btn-default"><%= link_to "Unfollow", friend_path(status.user.id), method: :delete %></h5></li>
             </ul>
           </div>
         </div>

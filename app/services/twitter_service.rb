@@ -49,4 +49,8 @@ class TwitterService
   def retweet(tweet)
     client.retweet!(tweet)
   end
+
+  def unfollow(friend)
+    client.unfollow(friend)
+  end
 end
