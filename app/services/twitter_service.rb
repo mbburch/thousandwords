@@ -27,7 +27,7 @@ class TwitterService
   end
 
   def tweet_count
-    user.tweet_count
+    user.tweets_count
   end
 
   def profile_image

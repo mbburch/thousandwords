@@ -30,6 +30,13 @@ RSpec.describe "User views dashboard", type: :feature, vcr: true  do
       end
     end
 
+    it "can view tweet count" do
+      within "#user-tweet-count" do
+        expect(page).to have_content "My Total Tweets:"
+        expect(page).to have_content "180"
+      end
+    end
+
     it "can view the timeline" do
       expect(page).to have_css('.tweet', count: 20)
     end
