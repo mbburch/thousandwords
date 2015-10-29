@@ -16,5 +16,13 @@ RSpec.describe "User favorites tweet", type: :feature, vcr: true  do
 
       expect(current_path).to eq(dashboard_path)
     end
+
+    it "can un favorite a tweet" do
+      expect(current_path).to eq(dashboard_path)
+
+      page.first(".unfave").click
+
+      expect(current_path).to eq(dashboard_path)
+    end
   end
 end

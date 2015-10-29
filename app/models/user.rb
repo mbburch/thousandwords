@@ -22,5 +22,7 @@
            :follower_count,
            :friends_count,
            :favorite,
-           :tweet, to: :twitter_client
+           :destroy_favorite,
+           :tweet,
+           :retweet, to: :twitter_client
 end

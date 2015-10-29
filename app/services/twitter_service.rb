@@ -38,7 +38,15 @@ class TwitterService
     client.favorite(tweet)
   end
 
+  def destroy_favorite(tweet)
+    client.destroy_favorite(tweet)
+  end
+
   def tweet(tweet)
     client.update(tweet)
+  end
+
+  def retweet(tweet)
+    client.retweet!(tweet)
   end
 end
