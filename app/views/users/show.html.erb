@@ -3,6 +3,12 @@
   <div class="parallax"><img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&fm=jpg&s=9c69296a682f2821ffedf583276c065d" alt=""></div>
 </div>
 <div class="section grey lighten-2 container">
-  <%= render "layouts/profile" %>
-  <%= render "layouts/timeline" %>
+  <div class="row">
+    <div class="col s4">
+      <%= render "layouts/profile" %>
+    </div>
+    <div class="col s8">
+      <%= render "layouts/timeline" %>
+    </div>
+  </div>
 </div>
