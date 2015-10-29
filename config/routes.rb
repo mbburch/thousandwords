@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: "users#show"
   resources :tweets, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
+  resources :retweets, only: [:create]
 end

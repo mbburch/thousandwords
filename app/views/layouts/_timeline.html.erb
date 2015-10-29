@@ -12,6 +12,10 @@
               <% end %>
               <li><span><%= status.favorite_count %></span></li>
             </ul>
+            <ul>
+              <li><h5 class="retweet"><%= link_to glyph(:retweet), retweets_path(tweet_id: status.id), method: :post %></h5></li>
+              <li><span><%= status.retweet_count %></span></li>
+            </ul>
           </div>
           <div class="col s2">
              <%= image_tag status.user.profile_image_url, class: "circle responsive-img" %>
