@@ -22,5 +22,6 @@
            :follower_count,
            :friends_count,
            :favorite,
+           :destroy_favorite,
            :tweet, to: :twitter_client
 end
