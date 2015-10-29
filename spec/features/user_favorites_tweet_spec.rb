@@ -9,9 +9,9 @@ RSpec.describe "User favorites tweet", type: :feature, vcr: true  do
       end
   end
 
-    it "can favorite a tweet" do
+    it "can favorite and unfavorite a tweet" do
       page.first('.fave').click
-      expect(current_path).to eq(favorites_path)
+      within
       expect(page).not_to have_css(".glyphicon-star-empty")
       expect(page).to have_css(".glyphicon-star")
     end
