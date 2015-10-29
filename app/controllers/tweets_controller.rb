@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def new
+    @twitter_client ||= current_user.twitter_client
   end
 
   def create
