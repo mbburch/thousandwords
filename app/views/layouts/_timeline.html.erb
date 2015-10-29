@@ -1,0 +1,17 @@
+<div class="timeline">
+  <ul>
+  <% @twitter_client.home_timeline.each do |status| %>
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <% if status.favorited? %>
+          <span class="unfave"><%= link_to glyph(:star), favorite_path(status.id), method: :delete %></span>
+        <% else %>
+          <span class="fave"><%= link_to glyph(:star_empty), favorites_path(tweet_id: status.id), method: :post %></span>
+        <% end %>
+         <span><%= status.favorite_count %></span>
+        <li class="tweet col s8"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
+      </div>
+    </div>
+  <% end %>
+  </ul>
+</div>
