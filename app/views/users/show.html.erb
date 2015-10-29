@@ -19,17 +19,6 @@
          </div>
        </div>
      </div>
-     <div class="timeline">
-       <ul>
-       <% @twitter_client.home_timeline.each do |status| %>
-         <div class="card-panel grey lighten-5 z-depth-1">
-           <div class="row valign-wrapper">
-             <span class="glyphicon glyphicon-star-empty col s2"><%= link_to "Favorite", "#" %></span>
-             <li class="tweet col s8"><strong>@<%= status.user.screen_name %> wants you to know:</strong> <%= status.text %></li>
-           </div>
-         </div>
-       <% end %>
-       </ul>
-     </div>
+     <%= render "layouts/timeline" %>
    </div>
 </div>

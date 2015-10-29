@@ -33,4 +33,8 @@ class TwitterService
   def profile_image
     user.profile_image_url.to_s.sub("_normal.", ".")
   end
+
+  def favorite(tweet)
+    client.favorite(tweet)
+  end
 end
