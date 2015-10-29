@@ -7,15 +7,13 @@ RSpec.describe "User favorites tweet", type: :feature, vcr: true  do
       within("header") do
         click_on "Log In"
       end
+    end
   end
 
-    it "can favorite and unfavorite a tweet" do
-      within all(".fave")[1] do
-        page.find(".glyphicon-star-empty").click
-        expect(page).not_to have_css(".glyphicon-star-empty")
-        expect(page).to have_css(".glyphicon-star")
-      end
-    end
+  it "can favorite and unfavorite a tweet" do
+    page.first(".fave").click
+    page.first(".unfave").click
 
+    expect(current_path).to eq(dashboard_path)
   end
 end
