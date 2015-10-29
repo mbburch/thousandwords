@@ -37,4 +37,8 @@ class TwitterService
   def favorite(tweet)
     client.favorite(tweet)
   end
+
+  def tweet(tweet)
+    client.update(tweet)
+  end
 end

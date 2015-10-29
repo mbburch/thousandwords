@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col m8 center">
+    <h1>Share your Thoughts</h1>
+    <div class="form-group">
+      <%= form_tag(tweets_path, method: :post) do %>
+        <span id="tweet-box"><%= text_area_tag(:tweet, nil, placeholder: "Got something to say?", class: "form-control") %></span>
+        <span id="new-tweet"><%= submit_tag("Post Tweet", class: "btn btn-success orange darken-4") %></span>
+      <% end %>
+    </div>
+  </div>
+</div>
+
