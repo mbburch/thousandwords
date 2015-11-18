@@ -5,11 +5,7 @@ This was an individual project in Module 3 at Turing School of Software & Design
 
 ## Project Description
 
-In this project, we'll be focusing on consuming and working with data from public APIs.
-
-As a vehicle for learning this concepts, we'll be selecting an API from a popular website and working to re-construct a simplified version of the website's existing UI using their own API.
-
-As we build these features, we'll also be working with the OAuth protocol to authenticate our users with the third-party provider, and using various testing techniques to allow us to test against the third-party data.
+In this project, I focused on consuming and working with data from the Twitter API. I worked with the OAuth protocol to authenticate users with Twitter, and I used various testing techniques to allow me to test against the third-party data.
 
 ## Learning Goals
 
